@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    min-height: 100vh;
+}
+
+.app-container {
+    padding-top: 50px;
+}
+
+.todo-card {
+    border-radius: 16px !important;
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2) !important;
+}
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-btn {
+    background: linear-gradient(90deg, #6e8efb, #a777e3) !important;
+    color: white !important;
+}
+
+.tasks-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
