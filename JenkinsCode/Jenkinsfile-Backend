@@ -80,8 +80,8 @@ pipeline {
                 dir('K8S-manifests/Backend') {
                     withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                         sh """
-                        git config user.email "abdoabdoslama509@gmail.com"
-                        git config user.name "Abdo-DevOps"
+                        git config user.email "abdelrahman.slamaa@gmail.com"
+                        git config user.name "abdelrahmanslamaa"
                         
                         # Update the image tag in deployment.yaml
                         sed -i "s|image: ${ACR_URL}/${IMAGE_NAME}:.*|image: ${ACR_URL}/${IMAGE_NAME}:${BUILD_NUMBER}|" deployment.yaml
@@ -89,7 +89,7 @@ pipeline {
                         git add deployment.yaml
                         if ! git diff --quiet --cached; then
                             git commit -m "GitOps: Update Backend Image to version ${BUILD_NUMBER} [skip ci]"
-                            git push https://${GITHUB_TOKEN}@github.com/abdoslama0079/Meran_stack_app.git HEAD:main
+                            git push https://${GITHUB_TOKEN}@github.com/abdelrahmanslamaa/Meran_stack_app.git HEAD:main
                         else
                             echo "No changes to commit"
                         fi
