@@ -25,7 +25,7 @@ pipeline {
 
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: ''
+                git branch: 'main', url: 'https://github.com/abdelrahmanslamaa/Mern_stack_app_DevOps.git'
             }
         }
 
@@ -98,7 +98,7 @@ pipeline {
                         git add deployment.yaml
                         if ! git diff --quiet --cached; then
                             git commit -m "GitOps: Update Image to version ${BUILD_NUMBER} [skip ci]"
-                            git push https://${GITHUB_TOKEN}@github.com/abdoslama0079/Meran_stack_app.git HEAD:main
+                            git push https://${GITHUB_TOKEN}@github.com/abdelrahmanslamaa/Meran_stack_app.git HEAD:main
                         else
                             echo "No changes detected in deployment manifest."
                         fi
